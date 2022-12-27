@@ -1,0 +1,58 @@
+With Python, itís easy to read strings from plain text filesófiles that are made up of 
+only ASCII characters. (Although there are different types of text files, when I use the
+term ìtext file,î I mean a plain text file.) Text files are a good choice for permanently
+storing simple informa-tion, for a number of reasons. First, text files are cross-platform. 
+A text file on a Windows machine is the same text file on a Mac and is the same text
+file under Unix. Second, text files are easy to use. Most operating systems come with basic 
+tools to view and edit them.
+
+The program reads a simple text file I created on my system using a text editor. You can find 
+the file on the companion website (www.courseptr.com/downloads) in the Chapter 7 folder; the 
+file name is read_it.txt. 
+
+Here are the contents of the file:
+
+Line 1
+This is line 2
+That makes this line 3
+
+You can find the code for the program on the companion website (www.courseptr.com/downloads) in 
+the Chapter 7 folder; the file name is read_it.py:
+
+print("Opening and closing the file.") 
+text_file = open("read_it.txt", "r") 
+text_file.close()
+
+print("\nReading characters from the file.") text_file = open("read_it.txt", "r")
+print(text_file.read(1))
+print(text_file.read(5))
+text_file.close()
+
+print("\nReading the entire file at once.")
+text_file = open("read_it.txt", "r") 
+whole_thing = text_file.read() 
+print(whole_thing)
+text_file.close()
+
+print("\nReading characters from a line.") text_file = open("read_it.txt", "r") print(text_file.readline(1))
+print(text_file.readline(5))
+text_file.close()
+
+print("\nReading one line at a time.") text_file = open("read_it.txt", "r") print(text_file.readline())
+print(text_file.readline())
+print(text_file.readline())
+text_file.close()
+
+print("\nReading the entire file into a list.") text_file = open("read_it.txt", "r")
+lines = text_file.readlines()
+print(lines)
+print(len(lines))
+for line in lines:
+    print(line) 
+text_file.close()
+
+
+print("\nLooping through the file, line by line.") text_file = open("read_it.txt", "r")
+for line in text_file:
+    print(line) 
+text_file.close()
